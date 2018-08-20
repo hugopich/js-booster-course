@@ -1,0 +1,9 @@
+.content {
+    min-height: 100%;  /* for browsers without vh unit support */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.hp-progress {
+    height: 20px;
+}
