@@ -1,9 +1,19 @@
+body {
+    background: #385167 url(https://source.unsplash.com/XdOvAFE4_RY/1920x1280) no-repeat;
+    background-size: cover;
+}
+
+#done {
+    display: none;
+}
 .content {
-    min-height: 100%;  /* for browsers without vh unit support */
+    /* vertical center
+    min-height: 100%;  !* for browsers without vh unit support *!
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: center;*/
+    padding-top: 100px;
 }
 .hp-progress {
-    height: 20px;
+    height: 30px;
 }
