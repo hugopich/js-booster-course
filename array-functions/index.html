@@ -35,7 +35,13 @@ Everything is in the console !
 
     // map and forEach
     const sitesAndCompanies = sites.map(value => value.site + ", by " + value.company);
-    sitesAndCompanies.forEach(value => console.log(value));
+    //sitesAndCompanies.forEach(value => console.log(value));
+
+    // map and reduce
+    const totalMillions = sites.map(site => site.millionUsers).reduce(
+        (previousMillion, currentMillion) => previousMillion + currentMillion);
+    console.log({totalMillions});
+
 </script>
 </body>
 </html>
