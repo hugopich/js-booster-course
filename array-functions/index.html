@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array methods</title>
+</head>
+<body>
+Everything is in the console !
+<script>
+    /* Virtual communities with 100+ million active users, and US origin
+    from Wikipedia https://en.wikipedia.org/wiki/List_of_virtual_communities_with_more_than_100_million_active_users */
+    const sites = [
+        {worldRank: 11,	site:'Twitter',	    company: 'Twitter',	    millionUsers: 335,	launched: 2006},
+        {worldRank: 12,	site:'Reddit',	    company: 'Reddit',	    millionUsers: 330,	launched: 2005},
+        {worldRank: 13,	site:'Snapchat',	company: 'Snap Inc.',	millionUsers: 300,	launched: 2011},
+        {worldRank: 17,	site:'LinkedIn',	company: 'Microsoft',	millionUsers: 250,	launched: 2003},
+        {worldRank: 18,	site:'Google+',	    company: 'Google',	    millionUsers: 212,	launched: 2011},
+        {worldRank: 21,	site:'Pinterest',	company: 'Pinterest',	millionUsers: 200,	launched: 2010},
+        {worldRank: 22,	site:'imo',	        company: 'PageBites',	millionUsers: 200,	launched: 2010},
+        {worldRank: 1, 	site:'Facebook',	company: 'Facebook',	millionUsers: 2230,	launched: 2004},
+        {worldRank: 2, 	site:'Youtube',	    company: 'Google',	    millionUsers: 1900,	launched: 2005},
+        {worldRank: 3, 	site:'WhatsApp',	company: 'Facebook',	millionUsers: 1500,	launched: 2009},
+        {worldRank: 4, 	site:'Messenger',	company: 'Facebook',	millionUsers: 1300,	launched: 2011},
+        {worldRank: 5, 	site:'Instagram',	company: 'Facebook',	millionUsers: 1000,	launched: 2010},
+        {worldRank: 9, 	site:'Tumblr',	    company: 'Verizon', 	millionUsers: 550,	launched: 2007}
+    ];
+
+    // sort
+    const byUsers = sites.sort(((a, b) => a.millionUsers > b.millionUsers ? -1 : 1));
+    //console.table(byUsers);
+
+    // filter
+    const recents = sites.filter(site => site.launched >= 2010);
+    //console.table(recents);
+
+    // map and forEach
+    const sitesAndCompanies = sites.map(value => value.site + ", by " + value.company);
+    //sitesAndCompanies.forEach(value => console.log(value));
+
+    // map and reduce
+    const totalMillions = sites.map(site => site.millionUsers).reduce(
+        (previousMillion, currentMillion) => previousMillion + currentMillion);
+    console.log({totalMillions});
+
+</script>
+</body>
+</html>
