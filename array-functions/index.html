@@ -25,6 +25,9 @@ Everything is in the console !
         {worldRank: 9, 	site:'Tumblr',	    company: 'Verizon', 	millionUsers: 550,	launched: 2007}
     ];
 
+
+    // 'Processing' methods
+    // =====================================================
     // sort
     const byUsers = sites.sort(((a, b) => a.millionUsers > b.millionUsers ? -1 : 1));
     //console.table(byUsers);
@@ -41,6 +44,29 @@ Everything is in the console !
     const totalMillions = sites.map(site => site.millionUsers).reduce(
         (previousMillion, currentMillion) => previousMillion + currentMillion);
     console.log({totalMillions});
+
+
+    // boolean methods
+    // =====================================================
+    const after2010 = (site) => site.launched > 2010;
+
+    const someAfter2010 = sites.some(after2010);
+    console.log({someAfter2010});
+
+    const everyAfter2010 = sites.every(after2010);
+    console.log({everyAfter2010});
+
+    // find methods
+    // =====================================================
+    const isFacebook = value => value.site === 'Facebook';
+
+    const facebook = sites.find(isFacebook);
+    console.log({facebook});
+
+    const facebookIndex = sites.findIndex(isFacebook); // attention, ce n'est pas la méthode 'indexOf' !
+    console.log({facebookIndex}); // attention, l'ordre du tableau a été modifié par l'utilisation de 'sort' au début du script (la méthode fait un 'in-place' sort, donc modifie la variable de départ)
+    sites.splice(facebookIndex, 1);
+    console.table(sites);
 
 </script>
 </body>
