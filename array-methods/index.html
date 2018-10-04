@@ -26,6 +26,11 @@ Everything is in the console !
     ];
 
 
+    // WARNING ******************************************************
+    // Some methods work IN-PLACE : even if a new array is produced, the orginal
+    // array may be modified
+
+
     // 'Processing' methods
     // =====================================================
     // sort
@@ -65,7 +70,15 @@ Everything is in the console !
 
     const facebookIndex = sites.findIndex(isFacebook); // attention, ce n'est pas la méthode 'indexOf' !
     console.log({facebookIndex}); // attention, l'ordre du tableau a été modifié par l'utilisation de 'sort' au début du script (la méthode fait un 'in-place' sort, donc modifie la variable de départ)
-    sites.splice(facebookIndex, 1);
+
+    // splice / slice
+    // ====================================================
+    const minusOne = sites.splice(facebookIndex, 1);
+    console.table(minusOne);
+    console.table(sites);
+
+    const top5 = sites.slice(0, 5);
+    console.table(top5);
     console.table(sites);
 
 </script>
